@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@cerebras/cerebras_cloud_sdk": "*",
+    "@google/generative-ai": "*",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.1",
+    "express": "^5.2.1",
+    "groq-sdk": "*",
+    "jsonwebtoken": "^9.0.3",
+    "openai": "*"
+  }
+}
