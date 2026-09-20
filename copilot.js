@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import 'dotenv/config';
 import Groq from 'groq-sdk';
 import { PROMPT_BF } from './src/config.js';

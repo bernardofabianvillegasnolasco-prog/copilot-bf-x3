@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import 'dotenv/config'; import Groq from 'groq-sdk'; import { PROMPT, Q } from './modules/base.js';
 const q=Q();
 const mods = [

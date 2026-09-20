@@ -1,0 +1,12 @@
+EOF
+git add .
+
+git commit -m "fix workflow 1.0.8"
+
+npm version patch
+
+git add .
+
+git commit -m "1.0.8"
+
+git push origin main

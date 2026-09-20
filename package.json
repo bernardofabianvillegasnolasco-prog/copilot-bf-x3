@@ -1,8 +1,27 @@
 {
+  "name": "copilot-bf-x3",
+  "version": "1.0.7",
+  "description": "COPILOT BF x3 - 3 Cerebros de Llama por BF Villegas",
   "type": "module",
-  "scripts": {
-    "start": "node src/index.js"
+  "main": "copilot.js",
+  "bin": {
+    "bf": "src/index.js",
+    "copilot": "copilot.js",
+    "copilot-bf-x3": "copilot.js"
   },
+  "scripts": {
+    "start": "node src/index.js",
+    "server": "node server.js"
+  },
+  "keywords": [
+    "copilot",
+    "bf-villegas",
+    "llama",
+    "groq",
+    "cerebras"
+  ],
+  "author": "BF Villegas <bernardo@example.com>",
+  "license": "MIT",
   "dependencies": {
     "@cerebras/cerebras_cloud_sdk": "*",
     "@google/generative-ai": "*",
@@ -13,5 +32,11 @@
     "groq-sdk": "*",
     "jsonwebtoken": "^9.0.3",
     "openai": "*"
-  }
+  },
+  "files": [
+    "src/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
 }

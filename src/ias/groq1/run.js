@@ -1,4 +1,4 @@
-import 'dotenv/config';
+content: (await import('../../config.js')).IDENTIDAD_BFimport 'dotenv/config';
 import Groq from 'groq-sdk'; 
 import { prompt, query } from './ia.js';
 const g = new Groq({apiKey:process.env.GROQ_API_KEY});

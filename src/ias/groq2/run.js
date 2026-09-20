@@ -1,4 +1,5 @@
-import 'dotenv/config';
+content: (await import('../../config.js')).IDENTIDAD_BF
+nano src/ias/groq3/run.jsimport 'dotenv/config';
 import Groq from 'groq-sdk'; 
 import { prompt, query } from './ia.js';
 const g = new Groq({apiKey:process.env.GROQ2_API_KEY});
