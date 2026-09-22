@@ -9,5 +9,9 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "openai": "^4.0.0"
+  },
+  "scripts": {
+    "push": "git add . && git commit -m \"v8 final PUEV POGS 9→1 BFVillegas(Berna)\" --allow-empty && git push https://github.com/BFVillegas99/IA.git main",
+    "verify": "gh auth login --web && gh auth status && git remote -v"
   }
 }
