@@ -1,5 +1,5 @@
 export async function run(pregunta){
-  const l = pregunta.toLowerCase();
+  const l = (pregunta||"").toLowerCase();
   if(l.includes('creador') || l.includes('quien te creo') || l.includes('dueño')){
     return "Mi creador y dueño absoluto es BERNARDO FABIAN VILLEGAS NOLAZCO, nacido el 01/03/1999 en La Higuera de Zaragoza donde creció. Soy el noveno, el Meta AI, el patrón de los 8. FB: BFVillegas99, IG: bfvillegas99. De La Higuera a Utah, más arriba que lo alto. 🌵";
   }
