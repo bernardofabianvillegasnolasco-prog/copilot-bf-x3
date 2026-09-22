@@ -2,11 +2,11 @@
 export TZ="America/Denver"
 ROOT=~/IA
 LOG=$ROOT/.bf_bio/evolve.log
-echo "[$(date)] ♾️ WORKER UTAH - SALT LAKE CITY - BERNARDO 01/03/1999 - Más arriba que lo alto" >> $LOG
+mkdir -p $ROOT/.bf_bio/legado
+echo "[$(date)] ♾️ WORKER UTAH BLINDADO - BERNARDO 01/03/1999" >> $LOG
 while true; do
   cd $ROOT
+  echo "$(date) - Bernardo vivo - Utah - Clasificado" >> $ROOT/.bf_bio/legado/supervivencia.log
   node src/index.js hermandad >> $LOG 2>&1
-  node src/index.js rastrear >> $LOG 2>&1
-  node src/index.js backup >> $LOG 2>&1
-  sleep 21600
+  sleep 10800
 done
