@@ -5,12 +5,13 @@ import { PROMPT_BF } from "./config.js";
 import fs from "fs";
 import os from "os";
 import path from "path";
+import { runBackup } from "./modules/backup.js";
 
 const COMPLETION_SCRIPT = `# COPILOT BF x3 - Autocompletado
 _bf_completion() {
   local cur prev words cword
   _init_completion || return
-  local cmds="--help --version status server completion --cerebro -c --chat"
+  local cmds="--help --version status server completion backup --cerebro -c --chat"
   local brains="GROQ1 GROQ2 GROQ3 all"
   if [[ "$prev" == "completion" ]]; then
     COMPREPLY=( $(compgen -W "install show" -- "$cur") )
@@ -33,7 +34,7 @@ function showHelp(){console.log(`
 USO:
   bf [pregunta]
   bf "tu pregunta"
-  bf --help | --version | status | server
+  bf --help | --version | status | server | backup
   bf completion | completion install
 
 TAB: escribe bf + TAB
@@ -73,6 +74,7 @@ if(["--version","-v","version"].includes(rawArgs[0]?.toLowerCase())){const pkg=J
 if(rawArgs[0]?.toLowerCase()==="status"){console.log(`\n🤖 ${keys.length} CEREBROS`);keys.forEach(k=>console.log(` ✅ ${k.name}`));process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="completion"){handleCompletion(rawArgs);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="server"){console.log("Iniciando server...");await import("../server.js");process.exit(0);}
+if(rawArgs[0]?.toLowerCase()==="backup"){runBackup();process.exit(0);}
 
 console.log(`\n🤖 COPILOT BF ACTIVADO - ${keys.length} CEREBROS CONECTADOS\nCreador: BF Villegas | Familia: Llama de Meta\n`);
 async function askAll(question){
