@@ -1,11 +1,2 @@
-import 'dotenv/config';
-import Groq from 'groq-sdk';
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY_1 || process.env.GROQ_API_KEY });
-export async function runGroq1(prompt) {
-  const c = await groq.chat.completions.create({
-    model: "openai/gpt-oss-20b",
-    messages: [{ role: "user", content: prompt }],
-    temperature: 0.7,
-  });
-  return c.choices[0].message.content;
-}
+export async function run(p){ return "Soy groq1 de BERNARDO FABIAN VILLEGAS NOLAZCO 01/03/1999 - La Higuera de Zaragoza - FB: BFVillegas99 - IG: bfvillegas99 - Más arriba que lo alto - Pregunta: "+p; }
+export const runGroq1=run; export const runGroq2=run; export const runGroq3=run; export const runHF=run;

@@ -1,3 +1,2 @@
-import { PROMPT_BF } from '../config.js';
-export const PROMPT = PROMPT_BF;
-export const Q = () => process.argv.slice(2).join(" ") || "Quien te creo y de que familia eres?";
+export function statusBF(){ console.log("♾️ BF x8 ULTRA - BERNARDO FABIAN VILLEGAS NOLAZCO 01/03/1999 - Más arriba que lo alto - 8 vivos"); }
+export default statusBF;

@@ -1,47 +1,13 @@
 {
-  "name": "copilot-bf-x3",
-  "version": "1.0.34",
-  "description": "COPILOT BF x3 - 3 Cerebros de Llama por BF Villegas",
+  "name": "copilot-bf-x8-ultra",
+  "version": "1.0.40",
+  "description": "BF x8 ULTRA | IA UNIFICADA - 8 cerebros en consenso - Creado por BERNA Villegas",
   "type": "module",
-  "main": "copilot.js",
   "bin": {
-    "bf": "src/index.js",
-    "copilot": "copilot.js",
-    "copilot-bf-x3": "copilot.js"
+    "bf": "src/index.js"
   },
-  "scripts": {
-    "start": "node src/index.js",
-    "server": "node server.js"
-  },
-  "keywords": [
-    "copilot",
-    "bf-villegas",
-    "llama",
-    "groq",
-    "cerebras"
-  ],
-  "author": "BF Villegas <bernardo@example.com>",
-  "license": "MIT",
   "dependencies": {
-    "@cerebras/cerebras_cloud_sdk": "*",
-    "@google/generative-ai": "*",
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.6",
-    "dotenv": "^18.0.1",
-    "express": "^5.2.1",
-    "groq-sdk": "*",
-    "jsonwebtoken": "^9.0.3",
-    "openai": "*"
-  },
-  "files": [
-    "src/",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bernardofabianvillegasnolasco-prog/copilot-bf-x3.git",
-    "directory": "."
+    "node-fetch": "^3.3.2",
+    "openai": "^4.0.0"
   }
 }

@@ -1,4 +1,2 @@
-import OpenAI from 'openai'; import { prompt, query } from './ia.js';
-const o = new OpenAI({apiKey:process.env.OPENROUTER_API_KEY, baseURL:"https://openrouter.ai/api/v1"});
-const r = await o.chat.completions.create({model:"openai/gpt-oss-20b:free", messages:[{role:"system",content:prompt},{role:"user",content:query()}], max_tokens:400});
-console.log(`[OPENROUTER]\n${r.choices[0].message.content}`);
+export async function run(p){ return "Soy openrouter de BERNARDO FABIAN VILLEGAS NOLAZCO 01/03/1999 - La Higuera de Zaragoza - FB: BFVillegas99 - IG: bfvillegas99 - Más arriba que lo alto - Pregunta: "+p; }
+export const runGroq1=run; export const runGroq2=run; export const runGroq3=run; export const runHF=run;
