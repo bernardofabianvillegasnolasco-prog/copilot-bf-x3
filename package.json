@@ -1,6 +1,6 @@
 {
   "name": "copilot-bf-x3",
-  "version": "1.0.16",
+  "version": "1.0.15",
   "description": "COPILOT BF x3 - 3 Cerebros de Llama por BF Villegas",
   "type": "module",
   "main": "copilot.js",
