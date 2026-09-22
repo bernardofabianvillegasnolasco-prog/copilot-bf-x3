@@ -62,7 +62,7 @@ const keys=[
 const rawArgs=process.argv.slice(2);
 
 if(!rawArgs.length || ["--help","-h","help"].includes(rawArgs[0]?.toLowerCase())){showHelp();console.log(`\n🤖 ${keys.length} CEREBROS\n`);if(!rawArgs.length)rawArgs[0]="Quien te creo y de que familia eres?";else process.exit(0);}
-if(["--version","-v","version"].includes(rawArgs[0]?.toLowerCase())){const pkg=JSON.parse(fs.readFileSync(new URL("../../package.json", import.meta.url),"utf8"));console.log(`copilot-bf-x3 v${pkg.version}`);process.exit(0);}
+if(["--version","-v","version"].includes(rawArgs[0]?.toLowerCase())){const pkg=JSON.parse(fs.readFileSync(new URL("../package.json", import.meta.url),"utf8"));console.log(`copilot-bf-x3 v${pkg.version}`);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="status"){runFullStatus(keys);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="completion"){handleCompletion(rawArgs);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="server"){console.log("Iniciando server...");await import("../server.js");process.exit(0);}
