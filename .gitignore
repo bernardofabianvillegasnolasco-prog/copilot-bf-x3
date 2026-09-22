@@ -9,3 +9,5 @@ node_modules/
 .bf_bio/rastreos/
 .bf_bio/fotos-bernardo/
 **/*clasificado*
+.bf_bio/legado/REGLAS-SECRETAS.md
+src/config.js
