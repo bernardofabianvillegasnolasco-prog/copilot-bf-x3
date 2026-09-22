@@ -38,5 +38,10 @@
     "README.md",
     "LICENSE",
     "package.json"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bernardofabianvillegasnolasco-prog/copilot-bf-x3.git",
+    "directory": "."
+  }
 }
