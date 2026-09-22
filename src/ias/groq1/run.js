@@ -1,1 +1,8 @@
-export async function run(p){ return "Vivo - groq1 - Más arriba que lo alto - BFVillegas(Berna)"; }
+import { IDENTIDAD_BF } from '../../config.js';
+export async function run(prompt){
+  const full = IDENTIDAD_BF + "\n\n" + prompt;
+  try{
+    const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
+    let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim().slice(0,800);
+  }catch{ return "Vivo - groq1 SERIO - Mas arriba que lo alto - "+prompt.slice(0,100); }
+}

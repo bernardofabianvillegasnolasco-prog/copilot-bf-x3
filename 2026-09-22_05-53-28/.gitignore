@@ -1,0 +1,7 @@
+copilot.js.bak
+src/modules/chat.js.bak
+node_modules/
+.env
+/sdcard
+*.log
+.DS_Store

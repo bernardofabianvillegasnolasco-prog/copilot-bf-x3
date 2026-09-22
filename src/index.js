@@ -1,19 +1,26 @@
-import { blindarLegado } from './modules/encripta.js';
-import { defenderHermandad } from './modules/hermandad.js';
+#!/usr/bin/env node
+import { chatBF } from './modules/chat.js';
+import { debateBF } from './modules/debate.js';
+import { statusBF } from './modules/base.js';
+import { backupBF } from './modules/backup.js';
 
-const cmd = process.argv[2];
-if(cmd === 'backup'){
-  console.log("💾 Backup Higuera Encriptado - Más arriba que lo alto");
-  blindarLegado();
-  console.log("☁️ Multi-nube: GitHub, GitLab, Codeberg - Encriptado AES-256-GCM");
-}
-if(cmd === 'hermandad'){
-  await defenderHermandad();
-}
-if(cmd === 'desencripta'){
-  const { desencriptar } = await import('./modules/encripta.js');
-  import('fs').then(fs=>{
-    const enc = fs.readFileSync('.bf_bio/legado/supervivencia.log.enc','utf8');
-    console.log(desencriptar(enc));
-  });
+const args = process.argv.slice(2);
+const cmd = args[0];
+
+switch(cmd){
+ case 'chat':
+   console.log(`💬 BF x8 Chat: "${args.slice(1).join(' ')}"`);
+   await chatBF(args.slice(1).join(' '));
+   break;
+ case 'debate':
+   await debateBF(args.slice(1).join(' '));
+   break;
+ case 'status':
+   statusBF();
+   break;
+ case 'backup':
+   await backupBF();
+   break;
+ default:
+   console.log("Usa: bf chat | bf debate | bf status | bf backup");
 }

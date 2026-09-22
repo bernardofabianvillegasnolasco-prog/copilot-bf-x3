@@ -1,1 +1,8 @@
-export async function run(p){ return "Vivo - together - Más arriba que lo alto - BFVillegas(Berna)"; }
+import { IDENTIDAD_BF } from '../../config.js';
+export async function runTogether(prompt){
+  const full = IDENTIDAD_BF + "\n\n" + prompt;
+  await new Promise(r=>setTimeout(r,6000));
+  const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
+  let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim();
+}
+export const run = runTogether;
