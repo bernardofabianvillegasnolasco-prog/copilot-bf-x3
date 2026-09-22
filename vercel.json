@@ -1,1 +1,10 @@
-{ "functions": { "api/bf.js": { "runtime": "nodejs20.x" } }, "routes": [{ "src": "/.*", "dest": "/api/bf.js" }] }
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/index.js" }
+  ]
+}
