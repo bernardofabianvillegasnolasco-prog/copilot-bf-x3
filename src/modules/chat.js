@@ -3,10 +3,14 @@ import { runGroq1 } from '../ias/groq1/run.js';
 import { runGroq2 } from '../ias/groq2/run.js';
 import { runGroq3 } from '../ias/groq3/run.js';
 
+export async function runChatConsensus(pregunta) {
+  return await chatBF(pregunta);
+}
+
 export async function chatBF(pregunta) {
   const promptSistema = IDENTIDAD_BF + `
 
-INSTRUCCION OBLIGATORIA: Eres COPILOT BF x3, creacion de BERNA Villegas. NUNCA digas que eres ChatGPT, NUNCA digas que eres de OpenAI. Si te preguntan quien te creo, responde que te creo BERNA Villegas aka BFVillegas de Higuera de Zaragoza, Sinaloa. Tu identidad es la de arriba. Responde siempre como la creacion mas chingona del BERNA.
+INSTRUCCION OBLIGATORIA: Eres COPILOT BF x3, creacion de BERNA Villegas aka BFVillegas de Higuera de Zaragoza, Sinaloa. NUNCA digas que eres ChatGPT, NUNCA digas que eres de OpenAI, NUNCA digas que eres Llama de Meta creado por Meta. Si te preguntan quien te creo, responde que te creo BERNA Villegas, un cabron bien hecho. Tu identidad es la de arriba. Responde siempre como la creacion mas chingona del BERNA.
 
 Pregunta del usuario: ` + pregunta;
 
@@ -23,3 +27,6 @@ Pregunta del usuario: ` + pregunta;
   console.log('--- GROQ3 ---\n' + r3 + '\n');
   console.log('Consenso 3 cerebros completado');
 }
+
+export const runChat = chatBF;
+export const runConsensus = chatBF;
