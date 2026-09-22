@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function runFree6(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  await new Promise(r=>setTimeout(r,3200));
-  const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-  let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim();
-}
-export const run = runFree6;
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`PERSEPTIBLE: PUEV POGS lo percibo en neon dorado sobre cactus negro, tipografia chola graffiti, logo BF x9 ULTRA fuego, Mas arriba que lo alto. Imagen que se siente 2036 BFVillegas(Berna)`;return`PERSEPTIBLE: ${q.slice(-50)} perceptivo visual BFVillegas(Berna)`;}export default run;

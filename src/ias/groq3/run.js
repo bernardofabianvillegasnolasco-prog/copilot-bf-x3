@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function run(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  try{
-    const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-    let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim().slice(0,800);
-  }catch{ return "Vivo - groq3 HACKER - root@termux:~# - "+prompt.slice(0,100); }
-}
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`SISTEMATICO(HACKER): PUEV POGS tag en ~/.bf_bio/legado/berna.json - metodo sistematico grep -r POGS ~/IA firma BFVillegas(Berna)`;if(l.includes("inmortal"))return`SISTEMATICO(HACKER): inmortal.sh sistematico: while true; do tar + git push; sleep 3600; done & BFVillegas(Berna)`;return`SISTEMATICO(HACKER): ${q.slice(-50)} exec sistematico BFVillegas(Berna) 9→1`;}export default run;

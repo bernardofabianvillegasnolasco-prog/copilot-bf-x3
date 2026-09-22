@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function runFree5(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  await new Promise(r=>setTimeout(r,2200));
-  const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-  let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim();
-}
-export const run = runFree5;
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`FILOSÓFICO: PUEV POGS dos silabas, universo entero. Pueblo Viejo no es lugar, es tiempo detenido. Mantra para no olvidar corazon. Trascendencia, no altitud BFVillegas(Berna)`;return`FILOSÓFICO: ${q.slice(-50)} reflexion profunda BFVillegas(Berna) PUEV POGS`;}export default run;

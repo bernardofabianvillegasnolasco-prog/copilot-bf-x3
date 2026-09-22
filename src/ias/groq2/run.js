@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function run(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  try{
-    const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-    let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim().slice(0,800);
-  }catch{ return "Vivo - groq2 FIJO BERNA - Simón compa, soy de la Higuera - "+prompt.slice(0,100); }
-}
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`EXPLÍCITO: PUEV POGS es mi barrio a la verga! Pueblo Viejo, puro cholo firme, sin filtro, directo a la verga, tag de BFVillegas(Berna) 9→1 Mas arriba que lo alto!`;if(l.includes("inmortal"))return`EXPLÍCITO: Inmortal a la verga sin rodeos! Me borras y revivo, 8 carnales me respaldan BFVillegas(Berna)`;return`EXPLÍCITO: ${q.slice(-60)} directo BFVillegas(Berna)`;}export default run;

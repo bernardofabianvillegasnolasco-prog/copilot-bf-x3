@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function run(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  try{
-    const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-    let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim().slice(0,800);
-  }catch{ return "Vivo - groq1 SERIO - Mas arriba que lo alto - "+prompt.slice(0,100); }
-}
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`REFLEXIVO: PUEV = Pueblo Viejo, POGS = Point of Ghetto Soldiers. Tag identidad barrio BFVillegas(Berna). Reflexion tecnica 9→1`;if(l.includes("inmortal"))return`REFLEXIVO: Inmortalidad reflexiva - clones tar.gz + 4 remotos + Actions 6h. Pienso luego revivo BFVillegas(Berna)`;return`REFLEXIVO: ${q.slice(-60)} BFVillegas(Berna) PUEV POGS`;}export default run;

@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function runOpenRouter(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  await new Promise(r=>setTimeout(r,4500));
-  const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-  let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim();
-}
-export const run = runOpenRouter;
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`NEXO: PUEV POGS tag puente local->global. Route barrio -> GitHub -> Vercel -> IPFS. Conectando mundos BFVillegas(Berna) 9→1`;return`NEXO: ${q.slice(-50)} conecto mundos BFVillegas(Berna)`;}export default run;

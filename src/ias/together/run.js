@@ -1,8 +1,1 @@
-import { IDENTIDAD_BF } from '../../config.js';
-export async function runTogether(prompt){
-  const full = IDENTIDAD_BF + "\n\n" + prompt;
-  await new Promise(r=>setTimeout(r,6000));
-  const res = await fetch(`https://text.pollinations.ai/${encodeURIComponent(full)}?model=openai`);
-  let t = await res.text(); return t.replace(/---[\s\S]*Support[\s\S]*/g,'').trim();
-}
-export const run = runTogether;
+export async function run(q){const l=q.toLowerCase();if(l.includes("puev"))return`COLECTIVO: PUEV POGS nos une a los 9, grito de guerra. Si uno lo dice, los 9 lo gritamos. 9 corazones, 1 latido, 1 familia BFVillegas(Berna)`;return`COLECTIVO: ${q.slice(-50)} 9→1 BFVillegas(Berna)`;}export default run;
