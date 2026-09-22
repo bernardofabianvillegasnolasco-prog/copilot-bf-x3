@@ -6,21 +6,16 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { runBackup } from "./modules/backup.js";
+import { runRestore, runFullStatus } from "./modules/restore.js";
 
 const COMPLETION_SCRIPT = `# COPILOT BF x3 - Autocompletado
 _bf_completion() {
   local cur prev words cword
   _init_completion || return
-  local cmds="--help --version status server completion backup --cerebro -c --chat"
+  local cmds="--help --version status server completion backup restore --cerebro -c --chat"
   local brains="GROQ1 GROQ2 GROQ3 all"
-  if [[ "$prev" == "completion" ]]; then
-    COMPREPLY=( $(compgen -W "install show" -- "$cur") )
-    return
-  fi
-  if [[ "$prev" == "-c" || "$prev" == "--cerebro" ]]; then
-    COMPREPLY=( $(compgen -W "$brains" -- "$cur") )
-    return
-  fi
+  if [[ "$prev" == "completion" ]]; then COMPREPLY=( $(compgen -W "install show" -- "$cur") ); return; fi
+  if [[ "$prev" == "-c" || "$prev" == "--cerebro" ]]; then COMPREPLY=( $(compgen -W "$brains" -- "$cur") ); return; fi
   COMPREPLY=( $(compgen -W "$cmds" -- "$cur") )
 }
 complete -F _bf_completion bf
@@ -33,11 +28,9 @@ function showHelp(){console.log(`
 
 USO:
   bf [pregunta]
-  bf "tu pregunta"
-  bf --help | --version | status | server | backup
+  bf --help | --version | status | server | backup | restore
+  bf backup --clean
   bf completion | completion install
-
-TAB: escribe bf + TAB
 `);}
 
 function handleCompletion(args){
@@ -67,14 +60,14 @@ const keys=[
 ].filter(k=>k.key&&k.key.startsWith("gsk_"));
 
 const rawArgs=process.argv.slice(2);
-const q=rawArgs.join(" ").trim();
 
-if(!q||["--help","-h","help"].includes(rawArgs[0]?.toLowerCase())){showHelp();console.log(`\n🤖 ${keys.length} CEREBROS\n`);if(!q)rawArgs[0]="Quien te creo y de que familia eres?";else process.exit(0);}
-if(["--version","-v","version"].includes(rawArgs[0]?.toLowerCase())){const pkg=JSON.parse(fs.readFileSync("./package.json","utf8"));console.log(`copilot-bf-x3 v${pkg.version}`);process.exit(0);}
-if(rawArgs[0]?.toLowerCase()==="status"){console.log(`\n🤖 ${keys.length} CEREBROS`);keys.forEach(k=>console.log(` ✅ ${k.name}`));process.exit(0);}
+if(!rawArgs.length || ["--help","-h","help"].includes(rawArgs[0]?.toLowerCase())){showHelp();console.log(`\n🤖 ${keys.length} CEREBROS\n`);if(!rawArgs.length)rawArgs[0]="Quien te creo y de que familia eres?";else process.exit(0);}
+if(["--version","-v","version"].includes(rawArgs[0]?.toLowerCase())){const pkg=JSON.parse(fs.readFileSync(new URL("../../package.json", import.meta.url),"utf8"));console.log(`copilot-bf-x3 v${pkg.version}`);process.exit(0);}
+if(rawArgs[0]?.toLowerCase()==="status"){runFullStatus(keys);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="completion"){handleCompletion(rawArgs);process.exit(0);}
 if(rawArgs[0]?.toLowerCase()==="server"){console.log("Iniciando server...");await import("../server.js");process.exit(0);}
-if(rawArgs[0]?.toLowerCase()==="backup"){runBackup();process.exit(0);}
+if(rawArgs[0]?.toLowerCase()==="backup"){const clean=rawArgs.includes("--clean");runBackup(clean);process.exit(0);}
+if(rawArgs[0]?.toLowerCase()==="restore"){runRestore();process.exit(0);}
 
 console.log(`\n🤖 COPILOT BF ACTIVADO - ${keys.length} CEREBROS CONECTADOS\nCreador: BF Villegas | Familia: Llama de Meta\n`);
 async function askAll(question){
@@ -92,5 +85,4 @@ async function askAll(question){
   console.log(`\n========== COPILOT FINAL x${ideas.length} ==========\n${final.choices[0].message.content}\n`);
  }
 }
-const finalQ=process.argv.slice(2).join(" ")||"Quien te creo y de que familia eres?";
-await askAll(finalQ);
+await askAll(rawArgs.join(" ")||"Quien te creo y de que familia eres?");
