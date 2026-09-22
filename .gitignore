@@ -1,10 +1,7 @@
-.env
-node_modules/
-server.log
-nohup.out
-main
-v1.0.13
-v1.0.13/
-ia_backup.sh
 copilot.js.bak
-
+src/modules/chat.js.bak
+node_modules/
+.env
+/sdcard
+*.log
+.DS_Store
