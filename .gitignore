@@ -11,3 +11,8 @@ node_modules/
 **/*clasificado*
 .bf_bio/legado/REGLAS-SECRETAS.md
 src/config.js
+.bf_bio/
+*.log
+*.key
+.env
+src/config.js
