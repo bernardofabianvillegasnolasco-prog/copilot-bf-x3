@@ -16,3 +16,5 @@ src/config.js
 *.key
 .env
 src/config.js
+.bf_bio/legado/REGLAS-SECRETAS.md
+src/config.js
