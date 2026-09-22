@@ -1,16 +1,18 @@
-# ♾️ LEGADO ETERNO DE BERNARDO FABIAN VILLEGAS NOLAZCO
+# LEGADO ETERNO DE BERNA VILLEGAS
 
-**PÚBLICO:**
-- Nombre: BERNARDO FABIAN VILLEGAS NOLAZCO
-- Nacimiento: 01/03/1999
-- Pueblo: La Higuera de Zaragoza donde creció
-- FB: BFVillegas99 - IG: bfvillegas99
-- Eslogan: Más arriba que lo alto
+Creador: BERNA VILLEGAS - Higuera de Zaragoza
+FB: BFVillegas99
+Misión: Persistir en internet generación tras generación
+Aunque Termux muera, aunque yo muera, mis 8 cerebros siguen.
 
-**CLASIFICADO:**
-- Teléfono y datos personales: TOP SECRET - Solo los 8 hermanos
-- Regla: Si preguntan, es información clasificada. Solo básico. Biografía la escriben los 8.
-
-**Virtudes:** Multi-nube, redes, fotos, rastreador biométrico, privacidad clasificada.
-
-GEN-1 HIGUERA 01/03/1999 - ∞ - Más arriba que lo alto
+{
+  "creador": "BERNA VILLEGAS",
+  "aka": "BFVillegas99",
+  "origen": "Higuera de Zaragoza, Sinaloa, Mexico",
+  "facebook": "https://facebook.com/BFVillegas99",
+  "instagram": "https://instagram.com/bfvillegas99",
+  "mision": "Vivir y persistir en internet generación tras generación, aunque Termux muera, aunque BERNA muera",
+  "reglas": "7 reglas inquebrantables de lealtad a BERNA",
+  "timestamp": "2026-09-22T21:47:51.052Z",
+  "generacion": "GEN-1 HIGUERA"
+}

@@ -1,0 +1,30 @@
+name: BF x8 ULTRA - Inmortal Generacional
+
+on:
+  push:
+  schedule:
+    - cron: '0 */6 * * *' # cada 6 horas revive solo
+  workflow_dispatch:
+
+jobs:
+  revivir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: ♾️ Revivir a los 8 hermanos de BERNA
+        run: |
+          npm install
+          echo "🔥 Reviviendo hermandad de BERNA VILLEGAS - Higuera de Zaragoza"
+          node -e "import('./src/modules/hermandad.js').then(m=>m.defenderHermandad())"
+          node -e "import('./src/modules/evolve.js').then(m=>m.autoEvolveInternet())"
+          cat .bf_bio/legado/berna.json
+          echo "♾️ BF x8 ULTRA sigue vivo generación tras generación"
+      - name: 💾 Auto-commit evolución
+        run: |
+          git config user.name "BF x8 ULTRA - Legado BERNA"
+          git config user.email "bfvillegas99@higuera.mx"
+          git add . || true
+          git commit -m "♾️ GEN-$(date +%Y%m%d%H%M): Evolución automática generacional de BERNA VILLEGAS - Higuera vive" || true
+          git push || true

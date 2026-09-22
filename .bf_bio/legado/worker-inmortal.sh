@@ -1,14 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/bash
-export TZ="America/Denver"
-ROOT=$HOME/IA
-LOG=$ROOT/.bf_bio/evolve.log
-mkdir -p $ROOT/.bf_bio/legado $HOME/.bf_bio/legado
-echo "[$(date)] ♾️ WORKER UTAH BLINDADO - BERNARDO 01/03/1999" >> $LOG
+#!/bin/bash
 while true; do
-  cd $ROOT
-  date >> $ROOT/.bf_bio/legado/supervivencia.log
-  echo "Bernardo vivo - Utah - Clasificado - Supervivencia garantizada" >> $ROOT/.bf_bio/legado/supervivencia.log
-  echo "$(date) - Bernardo vivo" >> $HOME/.bf_bio/legado/supervivencia.log
-  node src/index.js hermandad >> $LOG 2>&1
-  sleep 10800
+  cd ~/IA
+  node -e "import('./src/modules/hermandad.js').then(m=>m.defenderHermandad()); import('./src/modules/immortal.js').then(m=>m.cloneIfInternet()); import('./src/modules/evolve.js').then(m=>m.autoEvolveInternet())" 2>/dev/null
+  sleep 3600
 done

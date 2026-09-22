@@ -1,0 +1,1 @@
+{ "functions": { "api/bf.js": { "runtime": "nodejs20.x" } }, "routes": [{ "src": "/.*", "dest": "/api/bf.js" }] }
