@@ -5,3 +5,7 @@ node_modules/
 /sdcard
 *.log
 .DS_Store
+.bf_bio/legado/contacto-clasificado.json
+.bf_bio/rastreos/
+.bf_bio/fotos-bernardo/
+**/*clasificado*
