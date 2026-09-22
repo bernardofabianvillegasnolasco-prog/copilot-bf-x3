@@ -8,4 +8,4 @@ npm i -g copilot-bf-x3
 bf --help
 bf completion install
 
-Version: 1.0.10
+Version: 1.0.11
