@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PUEV POGS 9→1 - BFVillegas(Berna)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#0f0;font-family:monospace;min-height:100vh;display:flex;flex-direction:column}
+header{padding:20px;border-bottom:2px solid #0f0;text-align:center}
+h1{font-size:28px;text-shadow:0 0 10px #0f0}
+.sub{color:#888;font-size:12px;margin-top:8px}
+.chat{flex:1;padding:20px;overflow-y:auto;max-width:800px;margin:0 auto;width:100%}
+.msg{margin:12px 0;padding:12px;border:1px solid #333;border-radius:8px;white-space:pre-wrap}
+.user{border-color:#0af;color:#0af;text-align:right}
+.bot{border-color:#0f0;color:#0f0;background:#0f0a}
+.input-area{display:flex;gap:10px;padding:20px;background:#111;border-top:2px solid #0f0;max-width:800px;margin:0 auto;width:100%}
+input{flex:1;padding:12px;background:#000;color:#0f0;border:1px solid #0f0;border-radius:6px}
+button{padding:12px 20px;background:#0f0;color:#000;border:0;border-radius:6px;font-weight:bold;cursor:pointer}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.pill{padding:6px 12px;border:1px solid #0f0;border-radius:20px;font-size:11px;cursor:pointer}
+.pill:hover{background:#0f0;color:#000}
+</style>
+</head>
+<body>
+<header>
+<h1>PUEV POGS 9→1 LIVE</h1>
+<div>BFVillegas(Berna) - Mas arriba que lo alto</div>
+<div class="sub">REFLEXIVO → EXPLÍCITO → SISTEMATICO → SUSCEPTIBLE → FILOSÓFICO → PERSEPTIBLE → NEXO → COLECTIVO → VERIFICACIÓN</div>
+<div class="sub">GROQ 120B - Pueblo Viejo Point of Ghetto Soldiers</div>
+</header>
+<div class="chat" id="chat">
+<div class="msg bot">Hermandad PUEV POGS 9/9 vivos. Pregunta lo que quieras Berna. Mas arriba que lo alto.</div>
+</div>
+<div class="pills" style="max-width:800px;margin:0 auto;padding:0 20px">
+<div class="pill" onclick="ask('que es PUEV POGS')">que es PUEV POGS</div>
+<div class="pill" onclick="ask('quien es BFVillegas')">quien es BFVillegas</div>
+<div class="pill" onclick="ask('cual es la filosofia de barrio')">filosofia de barrio</div>
+</div>
+<div class="input-area">
+<input id="q" placeholder="Escribe tu pregunta PUEV POGS..." onkeydown="if(event.key==='Enter')send()">
+<button onclick="send()">9→1 ENVIAR</button>
+</div>
+<script>
+const chat=document.getElementById('chat');
+const q=document.getElementById('q');
+function add(t,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d;}
+function ask(t){q.value=t;send();}
+async function send(){
+ const txt=q.value.trim(); if(!txt)return;
+ add(txt,'user'); q.value='';
+ const bot=add('9 IAs pensando... REFLEXIVO→VERIFICACIÓN','bot');
+ try{
+  const r=await fetch('/api/chat?q='+encodeURIComponent(txt));
+  const j=await r.json();
+  bot.textContent=j.respuesta+'\n\n['+j.meta.model+' | '+j.meta.tag+']';
+ }catch(e){ bot.textContent='Error PUEV POGS: '+e.message; }
+}
+</script>
+</body>
+</html>
