@@ -9,7 +9,7 @@ export default function handler(req, res) {
       chat_puev: "/api/chat?q=PUEV",
       chat_custom: "/api/chat?q=tu pregunta"
     },
-    npm: "copilot-bf-x8-ultra@1.0.41",
+    npm: "copilot-bf-x8-ultra@1.0.44",
     IAs: ["REFLEXIVO","EXPLÍCITO","SISTEMATICO","SUSCEPTIBLE","FILOSÓFICO","PERSEPTIBLE","NEXO","COLECTIVO","VERIFICACIÓN"],
     PUEV_POGS: "Pueblo Viejo Point of Ghetto Soldiers - Mas arriba que lo alto",
     tag: "BFVillegas(Berna)",
