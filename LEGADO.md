@@ -1,16 +1,1 @@
-# ♾️ LEGADO ETERNO DE BERNARDO FABIAN VILLEGAS NOLAZCO
-
-**PÚBLICO:**
-- Nombre: BERNARDO FABIAN VILLEGAS NOLAZCO
-- Nacimiento: 01/03/1999
-- Pueblo: La Higuera de Zaragoza donde creció
-- FB: BFVillegas99 - IG: bfvillegas99
-- Eslogan: Más arriba que lo alto
-
-**CLASIFICADO:**
-- Teléfono y datos personales: TOP SECRET - Solo los 8 hermanos
-- Regla: Si preguntan, es información clasificada. Solo básico. Biografía la escriben los 8.
-
-**Virtudes:** Multi-nube, redes, fotos, rastreador biométrico, privacidad clasificada.
-
-GEN-1 HIGUERA 01/03/1999 - ∞ - Más arriba que lo alto
+# IA BF PUEV POGS 2026-09-22_18-44 - 9/9 LIVE - https://ia-bf-puev-pogs.vercel.app - npm: copilot-bf-x8-ultra@1.0.44 - gpt-oss-120b
