@@ -1,1 +1,25 @@
-{"type":"module","name":"ia-bf-puev-pogs"}
+{
+  "name": "copilot-bf-x8-ultra",
+  "version": "1.0.43",
+  "description": "PUEV POGS 9→1 LIVE - BFVillegas(Berna) Mas arriba que lo alto - GROQ 120B",
+  "main": "dist/index.js",
+  "bin": {
+    "copilot-bf": "bin/copilot-bf.js"
+  },
+  "scripts": {
+    "build": "echo PUEV POGS 9→1 build",
+    "start": "node bin/copilot-bf.js"
+  },
+  "keywords": [
+    "puev",
+    "pogs",
+    "bfvillegas",
+    "groq",
+    "ia",
+    "9-1",
+    "barrio"
+  ],
+  "author": "BFVillegas(Berna)",
+  "license": "MIT",
+  "dependencies": {}
+}
