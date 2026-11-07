@@ -11,19 +11,24 @@ if (!q) {
 }
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-const model = process.env.GROQ_MODEL || 'openai/gpt-oss-20b';
+const model = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
 
 try {
-  const r = await groq.chat.completions.create({
+  const stream = await groq.chat.completions.create({
     model,
     messages: [
       { role: 'system', content: PROMPT_BF },
       { role: 'user', content: q }
     ],
     temperature: 0.7,
-    max_tokens: 1500,
+    max_tokens: 2500,
+    stream: true,
   });
-  console.log(r.choices[0].message.content);
+  for await (const chunk of stream) {
+    const t = chunk.choices[0]?.delta?.content || '';
+    process.stdout.write(t);
+  }
+  console.log('');
 } catch (e) {
   console.log('GROQ FALLO:', e.message);
 }
