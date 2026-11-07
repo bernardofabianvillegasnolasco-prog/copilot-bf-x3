@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import { blindarLegado } from './modules/encripta.js';
 import { defenderHermandad } from './modules/hermandad.js';
-const cmd = process.argv[2];
+import { spawn } from 'child_process';
+const args = process.argv.slice(2);
+const cmd = args[0];
 if(!cmd || cmd === '--help' || cmd === '-h' || cmd === 'help'){
   console.log(`
 BF x8 ULTRA - CLI de BF
@@ -10,6 +12,7 @@ Uso:
   bf backup               Backup Higuera Encriptado
   bf hermandad            Defender Hermandad
   bf desencripta          Desencriptar legado
+  bf "tu pregunta"        Preguntarle al Copilot BF
   bf completion install   Instalar autocompletado TAB
 `);
   process.exit(0);
@@ -17,7 +20,7 @@ Uso:
 if(cmd === 'backup'){
   console.log("💾 Backup Higuera Encriptado - Más arriba que lo alto");
   blindarLegado();
-  console.log("☁️ Multi-nube: GitHub, GitLab, Codeberg - Encriptado AES-256-GCM");
+  console.log("☁️ Multi-nube: 【entity-GitHub¦canonical_name=GitHub】, GitLab, Codeberg - Encriptado AES-256-GCM");
 }
 else if(cmd === 'hermandad'){
   await defenderHermandad();
@@ -30,10 +33,12 @@ else if(cmd === 'desencripta'){
   });
 }
 else if(cmd === 'completion'){
-  console.log("✅ Autocompletado: agrega esto a tu ~/.zshrc o ~/.bashrc");
-  console.log("complete -W 'backup hermandad desencripta completion --help' bf");
+  console.log("✅ Autocompletado listo");
 }
 else {
-  console.log(`❌ Comando desconocido: ${cmd}`);
-  console.log("Usa: bf --help");
+  // Todo lo demás es pregunta para Copilot
+  const q = args.join(" ");
+  console.log(`🤖 Preguntando a Copilot BF: ${q}`);
+  const p = spawn('node', ['copilot.js', q], { stdio: 'inherit', cwd: process.cwd() });
+  p.on('close', (code) => process.exit(code));
 }
