@@ -38,7 +38,6 @@ else if(cmd === 'completion'){
 else {
   // Todo lo demás es pregunta para Copilot
   const q = args.join(" ");
-  console.log(`🤖 Preguntando a Copilot BF: ${q}`);
   const p = spawn('node', ['copilot.js', q], { stdio: 'inherit', cwd: process.cwd() });
   p.on('close', (code) => process.exit(code));
 }

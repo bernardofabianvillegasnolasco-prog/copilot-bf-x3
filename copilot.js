@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import 'dotenv/config';
+import dotenv from 'dotenv';
+dotenv.config({ quiet: true });
 import Groq from 'groq-sdk';
 import { PROMPT_BF } from './src/config.js';
 
