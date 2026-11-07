@@ -14,3 +14,9 @@ node_modules/
 *.log
 *.key
 .env
+.vercel
+.env*
+.env
+.env.local
+.bf_google_context.txt
+.bf_memoria.json
