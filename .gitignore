@@ -22,3 +22,5 @@ node_modules/
 .bf_memoria.json
 copilot.js.bak*
 test_todas_google.py
+.env*
+.vercel/
